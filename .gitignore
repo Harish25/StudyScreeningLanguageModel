@@ -1,6 +1,20 @@
 *.env
+
+# Model weights
 *.safetensors
-lora_model/*
-1nfuse/*
-BadPDF_output/*
-hf/*
+*.gguf
+
+*.zip
+
+# Cache/Tools
+unsloth_compiled_cache/
+llama.cpp/
+hf/
+1nfuse/
+
+# Exp Model Dirs
+*model*/
+outputs/
+
+# Dataset PDFs
+*PDF_output*/
