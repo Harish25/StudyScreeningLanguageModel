@@ -28,11 +28,11 @@ The model is hosted on Hugging Face in two merged formats:
 ## Repository Structure
 
 ```text
-├── data/                                 # Training and validation datasets (.csv)
-├── data_prep/                            # Scripts for data cleaning and feature engineering
+├── Dataset/                              # Training and validation datasets (.csv)
+├── DatasetPrep/                          # Scripts for data cleaning and feature engineering
 ├── llama3.2_3B_fullParamDataset_3epoch/  # Final model config (metadata only)
 ├── UnslothLlama_3.2_3B_FineTune.ipynb    # Jupyter notebook for fine-tuning LLM (Unsloth)
-├── inference_test.py                     # Python script to test model inference
+├── LlamaInferenceTest.py                 # Python script to test model inference
 ├── requirements.txt                      # Python dependencies
 └── README.md                             # Project documentation
 ```
@@ -110,7 +110,7 @@ To reproduce the model training process, run the provided notebook at: `UnslothL
 You can test the model using the provided inference script. This loads the base model and applies the fine-tuned adapter.
 
 ```bash
-python inference_test.py
+python LlamaInferenceTest.py
 ```
 
 
