@@ -5,8 +5,8 @@ library_name: peft
 
 # Model Card
 
-This model was fine-tuned from the Llama 3.2 3B Instruct model. 
-It is designed for the binary classfication of biomedical papers for a given topic to assist in SLRs.
+This model was fine-tuned from the Llama 3.2 3B Instruct model.  
+It is designed for the binary classfication of biomedical papers for a given topic to assist in SLRs.  
 The following configuration represents the finalized best performing model from the experimentation phase.
 
 - **Developed by:** Harish25
@@ -22,24 +22,24 @@ The following configuration represents the finalized best performing model from 
 The model was evaluated on a held-out test set of 1057 papers
 
 ### Metrics on Run 1:
-TP=192, FP=58, TN=765, FN=40
-Number of correct answers: 957
-Number of wrong answers: 98
-Num of tests: 1057
+* TP=192, FP=58, TN=765, FN=40
+* Number of correct answers: 957
+* Number of wrong answers: 98
+* Num of tests: 1057
 
-Accuracy = 0.9071090047393365
-Recall = 0.8275862068965517
-Precision = 0.768
+* **Accuracy** = 0.9071090047393365
+* **Recall** = 0.8275862068965517
+* **Precision** = 0.768
 
 ### Metrics on Run 2:
-TP=194, FP=54, TN=770, FN=38
-Number of correct answers:  964
-Number of wrong answers:  92
-Num of tests:  1057
+* TP=194, FP=54, TN=770, FN=38
+* Number of correct answers:  964
+* Number of wrong answers:  92
+* Num of tests:  1057
 
-Accuracy = 0.9128787878787878
-Recall = 0.8362068965517241
-Precision = 0.782258064516129
+* **Accuracy** = 0.9128787878787878
+* **Recall** = 0.8362068965517241
+* **Precision** = 0.782258064516129
 
 ## Model Training Details
 
