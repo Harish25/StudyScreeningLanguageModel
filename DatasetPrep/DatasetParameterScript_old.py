@@ -20,7 +20,7 @@ from dotenv import load_dotenv
 from PyPDF2 import PdfReader
 from openai import OpenAI
 
-#Script to extract additional parameters for papers in dataet
+#Script to extract additional parameters for papers in dataset
 
 #CSV Values
 path = "../Dataset/good_papers_with_topics.csv" 

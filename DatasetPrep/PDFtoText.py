@@ -14,10 +14,13 @@
 
 import requests
 from PyPDF2 import PdfReader
+from dotenv import load_dotenv
 import os
 
+load_dotenv('key.env')
+
 #Base URL and API key
-EMAIL = 'Provide email'
+EMAIL = os.getenv('UNPAYWALL_EMAIL')
 BASE_URL = 'https://api.unpaywall.org/v2/'
 output_directory = './output'
 

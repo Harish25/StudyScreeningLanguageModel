@@ -20,15 +20,17 @@ from dotenv import load_dotenv
 from PyPDF2 import PdfReader
 from openai import OpenAI
 
-ROOTDIR = "C:\\Projects\\VSCodeWorkspace\\StudyScreeningLanguageModel\\Dataset\\"
+ROOTDIR = "../Dataset/"
 
 #CSV Values
 path = ROOTDIR + "good_papers_with_topics.csv"
 dataCSV = pd.read_csv(path)
 doiList = dataCSV["DOI"].tolist()
 
+load_dotenv('key.env')
+
 #PDF retrieval API values
-EMAIL = 'Provide email'
+EMAIL = os.getenv('UNPAYWALL_EMAIL')
 API = 'https://api.unpaywall.org/v2/'
 output_directory = './PDF_output'
 
@@ -148,7 +150,7 @@ while endRange <= doiListSize:
     #print(f"Appending rows from {startRange} to {endRange - len(rowsToRemove)}")
 
     #Append current loop progress
-    savePath = ROOTDIR + "DatasetParams2\\good_papers_with_topics_with_params.csv"
+    savePath = ROOTDIR + "DatasetParams2/good_papers_with_topics_with_params.csv"
     saveCSV.to_csv(savePath, mode='a', index=False, header=not os.path.exists(savePath))
 
     if(endRange == doiListSize):#End reached
