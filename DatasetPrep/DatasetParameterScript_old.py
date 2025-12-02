@@ -1,3 +1,17 @@
+# Copyright 2025 H. Umapathithasan, A. Vasantharasan, N. Mehanathan, & N. Kannan
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import os
 import time
 import requests
@@ -9,17 +23,18 @@ from openai import OpenAI
 #Script to extract additional parameters for papers in dataet
 
 #CSV Values
-path = "C:\\Projects\\VSCodeWorkspace\\StudyScreeningLanguageModel\\Dataset\\good_papers_with_topics.csv" 
+path = "../Dataset/good_papers_with_topics.csv" 
 dataCSV = pd.read_csv(path)
 doiList = dataCSV["DOI"].tolist()
 
+load_dotenv('key.env')
+
 #PDF retrieval API values
-EMAIL = 'Provide email'
+EMAIL = os.getenv('UNPAYWALL_EMAIL')
 API = 'https://api.unpaywall.org/v2/'
 output_directory = './PDF_output'
 
 #GPT API setup
-load_dotenv('key.env')
 client = OpenAI(api_key = os.getenv('OPENAI_API_KEY'))
 
 pdf_texts = []
@@ -128,5 +143,5 @@ for i, pdf_text in enumerate(pdf_texts):
         request_limit = 0
 
 #Save modified CSV file with parameters
-savePath = "C:\\Projects\\VSCodeWorkspace\\StudyScreeningLanguageModel\\Dataset\\DatasetParams\\good_papers_with_topics.csv"
+savePath = "../Dataset/DatasetParams/good_papers_with_topics.csv"
 dataCSV.to_csv(savePath)
