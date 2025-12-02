@@ -1,0 +1,19 @@
+# Core Fine-Tuning
+unsloth[cu124-torch250]==2025.3.10
+
+# Data Prep + Utilities
+pandas==2.2.3
+numpy==2.0.2
+scipy==1.14.1
+openai==1.72.0
+requests==2.32.3
+python-dotenv==1.0.1
+tf-keras==2.18.0
+
+# Metrics + Visualization
+scikit-learn==1.5.2
+matplotlib==3.9.2
+seaborn==0.13.2
+
+# PDF Extraction
+PyPDF2>=3.0.0
