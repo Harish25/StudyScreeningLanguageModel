@@ -11,7 +11,7 @@ This repository contains the fine-tuning code for the system's core classifier, 
 ### Web Application Integration
 The LLM acts as the classification engine for the full-stack M.A.R.S. web application, working downstream from OpenAI's GPT-4o (which is used for parameter extraction of PDF inputs) to streamline academic workflows.  
 
-**[View the M.A.R.S. Web Interface Repository](https://github.com/ashwin-v1/Capstone)**
+**[View the M.A.R.S. Web Interface Repository](https://github.com/ashwin-v1/MARSWebUI)**
 
 The web app provides a user-friendly interface to test the system. Upload PDFs, and the app handles text extraction, parameter extraction, and LLM querying automatically. 
 * *Note: The web app requires an OpenAI API Key for parameter extraction and the model weights must be downloaded separately.*
@@ -21,8 +21,8 @@ The web app provides a user-friendly interface to test the system. Upload PDFs, 
 
 The model is hosted on Hugging Face in two merged formats:
 
-* [**🤗 Merged 4-bit Model (.safetensors)**](https://huggingface.co/1nfuse/llama3.2-3B_SLR_FTmodel-4bit-3epoch)
 * [**🤗 Quantized GGUF (.gguf)**](https://huggingface.co/1nfuse/llama3.2-3B_SLR_FTmodel-q4km-3epoch)
+* [**🤗 Merged 4-bit Model (.safetensors)**](https://huggingface.co/1nfuse/llama3.2-3B_SLR_FTmodel-4bit-3epoch)
 
 
 ## Repository Structure
@@ -55,6 +55,8 @@ Unlike standard text classifiers that often rely solely on the Abstract, this mo
 ### Target Labels
 * **Good:** Relevant/High-quality paper.
 * **Bad:** Irrelevant/Low-quality paper.
+
+**View the Source Dataset Repository: [TMU-DataLab/FASS-SLR](https://github.com/TMU-DataLab/FASS-SLR)**
 
 
 ## Fine-Tuning Details
